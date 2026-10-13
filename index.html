@@ -42,19 +42,20 @@
   <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
-      <div class="container">
+      <div class="container hero-inner">
         <div class="hero-content">
           <h1>Willkommen am Ende der Welt</h1>
           <p>Ein Land der Extreme. Zwischen dem Pazifik und den mächtigen Anden erstreckt sich Chile über 4.300 Kilometer. Entdecken Sie glühende Wüsten, eisige Gletscher und unberührte Natur.</p>
           <a href="#karte" class="btn">Reise starten</a>
         </div>
+        <div class="hero-image" aria-hidden="true">
+          <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+            <path d="M 400,600 L 600,200 L 800,600 Z" fill="var(--color-terracotta)" opacity="0.6"/>
+            <path d="M 200,600 L 500,100 L 800,600 Z" fill="var(--color-andes-blue)" opacity="0.4"/>
+            <circle cx="200" cy="150" r="80" fill="var(--color-sand)" opacity="0.8"/>
+          </svg>
+        </div>
       </div>
-      <!-- Decorative SVG Background -->
-      <svg class="hero-bg" viewBox="0 0 800 600" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
-        <path d="M 400,600 L 600,200 L 800,600 Z" fill="var(--color-terracotta)" opacity="0.6"/>
-        <path d="M 200,600 L 500,100 L 800,600 Z" fill="var(--color-andes-blue)" opacity="0.4"/>
-        <circle cx="200" cy="150" r="80" fill="var(--color-sand)" opacity="0.8"/>
-      </svg>
     </section>
 
     <!-- Intro Section -->
@@ -103,14 +104,15 @@
                 <text x="30" y="35" text-anchor="middle" font-family="var(--font-sans)" font-size="10" fill="#fff" pointer-events="none" font-weight="bold">Rapa Nui</text>
               </g>
 
-              <!-- Map Labels -->
-              <g class="map-labels">
-                <text x="200" y="150">Atacama</text>
-                <text x="190" y="330">Zentralchile</text>
-                <text x="180" y="480">Seengebiet</text>
-                <text x="170" y="650">Patagonien</text>
-              </g>
             </svg>
+
+            <!-- HTML Map Labels overlay for better accessibility and contrast -->
+            <div class="map-html-labels">
+              <button type="button" class="map-label-btn" data-region="atacama" style="top: 18%; left: 66%;">Atacama</button>
+              <button type="button" class="map-label-btn" data-region="zentralchile" style="top: 41%; left: 63%;">Zentralchile</button>
+              <button type="button" class="map-label-btn" data-region="seengebiet" style="top: 60%; left: 60%;">Seengebiet</button>
+              <button type="button" class="map-label-btn" data-region="patagonien" style="top: 81%; left: 56%;">Patagonien</button>
+            </div>
           </div>
 
           <!-- Content Panels -->
@@ -246,7 +248,7 @@
   <footer>
     <div class="container footer-content">
       <div class="copyright">
-        © 2024 Chile Travler. Alle Rechte vorbehalten. Ein unabhängiges Reiseinformationsportal.
+        © 2026 Chile Travler. Alle Rechte vorbehalten. Ein unabhängiges Reiseinformationsportal.
       </div>
       <ul class="footer-links">
         <li><a href="impressum.html">Impressum</a></li>
