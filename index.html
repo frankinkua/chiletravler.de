@@ -1,1 +1,262 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Work in Progress</title></head><body style="font-family:system-ui;display:grid;place-items:center;min-height:100vh;margin:0"><h1>chiletravler.de</h1></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chile Travler | Entdecke das Abenteuer deines Lebens</title>
+  <meta name="description" content="Ein Reiseführer für Chile: Von der Atacama-Wüste über Patagonien bis zur Osterinsel. Entdecke die besten Reisezeiten, Routen und Highlights.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Chile Travler | Entdecke das Abenteuer deines Lebens">
+  <meta property="og:description" content="Ein Reiseführer für Chile: Von der Atacama-Wüste über Patagonien bis zur Osterinsel. Entdecke die besten Reisezeiten, Routen und Highlights.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chiletravler.de/">
+  <meta property="og:locale" content="de_DE">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#e07a5f">
+</head>
+<body>
+  <a href="#main-content" class="visually-hidden" style="position: absolute; top: -100px; padding: 1rem; background: var(--color-bg); z-index: 1000;">Zum Hauptinhalt springen</a>
+
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg class="logo-icon" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M 15,85 L 50,25 L 85,85 Z" fill="#e07a5f"/>
+          <path d="M 50,25 L 42,38 L 58,38 Z" fill="#f4f1de"/>
+        </svg>
+        Chile Travler
+      </a>
+      <nav aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="#karte">Regionen</a></li>
+          <li><a href="#reisezeit">Reisezeit</a></li>
+          <li><a href="#route">Route</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Willkommen am Ende der Welt</h1>
+          <p>Ein Land der Extreme. Zwischen dem Pazifik und den mächtigen Anden erstreckt sich Chile über 4.300 Kilometer. Entdecken Sie glühende Wüsten, eisige Gletscher und unberührte Natur.</p>
+          <a href="#karte" class="btn">Reise starten</a>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+            <path d="M 400,600 L 600,200 L 800,600 Z" fill="var(--color-terracotta)" opacity="0.6"/>
+            <path d="M 200,600 L 500,100 L 800,600 Z" fill="var(--color-andes-blue)" opacity="0.4"/>
+            <circle cx="200" cy="150" r="80" fill="var(--color-sand)" opacity="0.8"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="container" id="intro">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2>Warum Chile?</h2>
+        <p>Chile ist ein Land für Abenteurer, Naturliebhaber und Entdecker. Es ist das schmalste Land der Welt, doch seine Vielfalt ist grenzenlos. Im Norden erwartet Sie die trockenste Wüste der Erde, im Zentrum mediterranes Klima mit weltbekannten Weingütern, und im tiefen Süden kalben jahrtausendealte Gletscher in türkisblaue Fjorde.</p>
+        <p>Ob Sie auf dem Vulkan Villarrica stehen, durch die mondähnlichen Landschaften der Atacama wandern oder die geheimnisvollen Moais auf der Osterinsel bestaunen – Chile wird Sie für immer verändern. Lassen Sie sich inspirieren und planen Sie Ihre unvergessliche Reise.</p>
+      </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section" id="karte">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Die Regionen Chiles</h2>
+        <div class="map-layout">
+
+          <!-- SVG Map -->
+          <div class="map-container" aria-label="Interaktive Karte von Chile">
+            <svg class="chile-map" viewBox="0 0 300 800" xmlns="http://www.w3.org/2000/svg" aria-label="Karte der Regionen Chiles">
+              <!-- Definitions for map -->
+              <defs>
+                <filter id="shadow">
+                  <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.1" />
+                </filter>
+              </defs>
+
+              <!-- Map Regions (Simplified representations for visual effect) -->
+              <g class="map-layer" filter="url(#shadow)">
+                <!-- Norte Grande & Chico (Atacama) -->
+                <path id="atacama" class="map-region active" d="M 160,50 L 190,50 L 180,250 L 140,250 Z" aria-label="Region Atacama auswählen" role="button" aria-pressed="true" />
+
+                <!-- Central Chile -->
+                <path id="zentralchile" class="map-region" d="M 140,250 L 180,250 L 170,400 L 130,400 Z" aria-label="Region Zentralchile auswählen" role="button" aria-pressed="false" />
+
+                <!-- Lakes Region -->
+                <path id="seengebiet" class="map-region" d="M 130,400 L 170,400 L 160,550 L 120,550 Z" aria-label="Region Seengebiet auswählen" role="button" aria-pressed="false" />
+
+                <!-- Patagonia -->
+                <path id="patagonien" class="map-region" d="M 120,550 L 160,550 L 150,750 L 100,750 L 110,650 Z" aria-label="Region Patagonien auswählen" role="button" aria-pressed="false" />
+              </g>
+
+              <!-- Easter Island (floating box) -->
+              <g transform="translate(20, 300)">
+                <rect id="osterinsel" class="map-region" x="0" y="0" width="60" height="60" rx="8" aria-label="Region Osterinsel auswählen" role="button" aria-pressed="false" />
+                <text x="30" y="35" text-anchor="middle" font-family="var(--font-sans)" font-size="10" fill="#fff" pointer-events="none" font-weight="bold">Rapa Nui</text>
+              </g>
+
+            </svg>
+
+            <!-- HTML Map Labels overlay for better accessibility and contrast -->
+            <div class="map-html-labels">
+              <button type="button" class="map-label-btn" data-region="atacama" style="top: 18%; left: 66%;">Atacama</button>
+              <button type="button" class="map-label-btn" data-region="zentralchile" style="top: 41%; left: 63%;">Zentralchile</button>
+              <button type="button" class="map-label-btn" data-region="seengebiet" style="top: 60%; left: 60%;">Seengebiet</button>
+              <button type="button" class="map-label-btn" data-region="patagonien" style="top: 81%; left: 56%;">Patagonien</button>
+            </div>
+          </div>
+
+          <!-- Content Panels -->
+          <div class="region-content" aria-live="polite">
+
+            <!-- Atacama Panel -->
+            <div id="panel-atacama" class="region-panel active">
+              <h3>Die Atacama-Wüste</h3>
+              <p>Der Norden Chiles beheimatet die trockenste Wüste der Welt außerhalb der Polarregionen. Eine Landschaft wie auf einem anderen Planeten: Geysire, die im Morgengrauen brodeln, tiefblaue Altiplano-Lagunen mit rosa Flamingos und riesige Salzseen.</p>
+              <p>Nachts bietet die Atacama einen der klarsten Sternenhimmel der Erde, weshalb hier einige der wichtigsten Observatorien der Welt stehen.</p>
+              <ul class="region-highlights">
+                <li><strong>Valle de la Luna:</strong> Mondlandschaften, die im Sonnenuntergang rot leuchten.</li>
+                <li><strong>El Tatio Geysire:</strong> Das höchstgelegene Geysirfeld der Welt auf 4.320 Metern.</li>
+                <li><strong>Salar de Atacama:</strong> Der drittgrößte Salzsee der Welt.</li>
+              </ul>
+            </div>
+
+            <!-- Zentralchile Panel -->
+            <div id="panel-zentralchile" class="region-panel" hidden>
+              <h3>Zentralchile & Santiago</h3>
+              <p>Das Herz Chiles schlägt im Zentrum. Die kosmopolitische Hauptstadt Santiago de Chile liegt malerisch eingebettet in einem Tal, umgeben von den schneebedeckten Gipfeln der Anden.</p>
+              <p>Diese Region profitiert von einem mediterranen Klima, was sie zu einem der weltbesten Weinbaugebiete macht. Nur wenige Autostunden entfernt liegt die bunte Hafenstadt Valparaíso, die zum UNESCO-Weltkulturerbe gehört.</p>
+              <ul class="region-highlights">
+                <li><strong>Santiago:</strong> Pulsierende Metropole mit dem Aussichtsberg Cerro San Cristóbal.</li>
+                <li><strong>Valparaíso:</strong> Künstlerische Hafenstadt mit historischen Standseilbahnen und Street-Art.</li>
+                <li><strong>Casablanca-Tal:</strong> Exzellente Weingüter, berühmt für Sauvignon Blanc und Carménère.</li>
+              </ul>
+            </div>
+
+            <!-- Seengebiet Panel -->
+            <div id="panel-seengebiet" class="region-panel" hidden>
+              <h3>Das Seengebiet</h3>
+              <p>Der Kleine Süden Chiles, auch die chilenische Schweiz genannt. Tiefblaue Seen, dichte, uralte Araukarienwälder und schneebedeckte, perfekt kegelförmige Vulkane prägen das Bild dieser magischen Region.</p>
+              <p>Es ist ein Paradies für Outdoor-Enthusiasten: Wandern, Rafting, Skifahren und Fliegenfischen gehören hier zum Alltag. Zudem ist die Region stark von der Kultur der indigenen Mapuche geprägt.</p>
+              <ul class="region-highlights">
+                <li><strong>Vulkan Osorno:</strong> Ein makelloser Kegelvulkan am Ufer des Llanquihue-Sees.</li>
+                <li><strong>Insel Chiloé:</strong> Mystische Insel mit einzigartigen Holzkirchen und Palafitos (Pfahlbauten).</li>
+                <li><strong>Pucón:</strong> Das Abenteuer-Zentrum am Fuße des aktiven Vulkans Villarrica.</li>
+              </ul>
+            </div>
+
+            <!-- Patagonien Panel -->
+            <div id="panel-patagonien" class="region-panel" hidden>
+              <h3>Patagonien & Tierra del Fuego</h3>
+              <p>Der wilde, ungezähmte Süden. Patagonien ist eine Landschaft der Superlative, geprägt von gigantischen Eisfeldern, schroffen Granitspitzen, tiefen Fjorden und endloser Pampa.</p>
+              <p>Ganz im Süden, durch die Magellanstraße getrennt, liegt Feuerland (Tierra del Fuego) – das Ende der Welt. Die Natur hier ist rau, unbarmherzig und von unbeschreiblicher Schönheit.</p>
+              <ul class="region-highlights">
+                <li><strong>Torres del Paine:</strong> Einer der schönsten Nationalparks der Welt mit den markanten Granittürmen.</li>
+                <li><strong>Carretera Austral:</strong> Eine der spektakulärsten Roadtrip-Routen der Welt durch dichte Urwälder.</li>
+                <li><strong>Punta Arenas:</strong> Das Tor zur Antarktis und Ausgangspunkt für Pinguin-Beobachtungen.</li>
+              </ul>
+            </div>
+
+            <!-- Osterinsel Panel -->
+            <div id="panel-osterinsel" class="region-panel" hidden>
+              <h3>Osterinsel (Rapa Nui)</h3>
+              <p>Über 3.500 Kilometer vom chilenischen Festland entfernt, mitten im Pazifik, liegt eine der isoliertesten bewohnten Inseln der Welt. Die Osterinsel ist berühmt für ihre mysteriösen, gigantischen Steinstatuen, die Moais.</p>
+              <p>Doch Rapa Nui bietet mehr als nur Archäologie: Vulkanische Krater, weiße Sandstrände und eine lebendige polynesische Kultur machen die Insel zu einem unvergleichlichen Reiseziel.</p>
+              <ul class="region-highlights">
+                <li><strong>Ahu Tongariki:</strong> Die größte Zeremonialanlage mit 15 aufgereihten Moais.</li>
+                <li><strong>Rano Raraku:</strong> Der Steinbruch der Vulkane, in dem die Statuen gemeißelt wurden.</li>
+                <li><strong>Anakena Beach:</strong> Ein malerischer Palmenstrand mit eigenem Ahu (Plattform).</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Times Section -->
+    <section class="container" id="reisezeit">
+      <h2 style="text-align: center;">Die beste Reisezeit</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">Wegen seiner enormen Länge von Nord nach Süd hat Chile fast alle Klimazonen der Erde zu bieten. Die Jahreszeiten sind entgegengesetzt zu Europa: Wenn bei uns Winter ist, herrscht in Chile Sommer.</p>
+
+      <div class="weather-cards">
+        <div class="weather-card">
+          <div class="weather-icon" aria-hidden="true">☀️</div>
+          <h3>Norden (Atacama)</h3>
+          <p><strong>Ganzjährig bereisbar.</strong> Die Atacama ist immer extrem trocken. Tagsüber warm bis heiß (20-25°C), nachts fallen die Temperaturen stark ab, oft unter den Gefrierpunkt. Im bolivianischen Winter (Jan-Feb) kann es vereinzelt zu starken Regenfällen kommen.</p>
+        </div>
+        <div class="weather-card">
+          <div class="weather-icon" aria-hidden="true">🍇</div>
+          <h3>Zentrum (Santiago)</h3>
+          <p><strong>Oktober bis April.</strong> Das Klima ist mediterran. Die Sommer (Dez-Feb) sind heiß und trocken mit Temperaturen über 30°C. Der Winter (Jun-Aug) bringt Regen, aber auch exzellente Bedingungen für Wintersport in den nahen Anden.</p>
+        </div>
+        <div class="weather-card">
+          <div class="weather-icon" aria-hidden="true">🌲</div>
+          <h3>Süden (Patagonien)</h3>
+          <p><strong>November bis März.</strong> Für Patagonien ist der chilenische Sommer zwingend zu empfehlen. Selbst dann kann das Wetter an einem Tag alle vier Jahreszeiten zeigen, und starker Wind ist alltäglich. Im Winter schließen viele Nationalparks und Unterkünfte.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Route Section -->
+    <section class="map-section" id="route">
+      <div class="container" style="max-width: 800px;">
+        <h2>In 3 Wochen durch Chile</h2>
+        <p>Dies ist eine klassische Route für Erstbesucher, die die extremen Kontraste des Landes erleben möchten. Da die Entfernungen riesig sind, beinhaltet diese Route Inlandsflüge.</p>
+
+        <div class="route-timeline">
+          <div class="route-stop">
+            <span class="route-day">Tage 1-3: Santiago & Valparaíso</span>
+            <h3>Ankunft im Zentrum</h3>
+            <p>Akklimatisierung in der Hauptstadt. Besuch des Cerro San Cristóbal, Plaza de Armas und des historischen Viertels Bellavista. Ein Tagesausflug führt an die Küste in die bunte Hügelstadt Valparaíso.</p>
+          </div>
+          <div class="route-stop">
+            <span class="route-day">Tage 4-8: Atacama-Wüste</span>
+            <h3>Flug nach Calama & San Pedro</h3>
+            <p>Erkundung der Wüste von San Pedro de Atacama aus. Sonnenuntergang im Valle de la Luna, ein früher Morgen bei den Tatio-Geysiren, Bad in heißen Quellen und Sternenbeobachtung in der Wüstennacht.</p>
+          </div>
+          <div class="route-stop">
+            <span class="route-day">Tage 9-13: Das Seengebiet</span>
+            <h3>Flug nach Puerto Montt / Puerto Varas</h3>
+            <p>Mietwagen-Tour rund um den Llanquihue-See. Wanderung am Fuße des Osorno-Vulkans, Besuch der Petrohué-Wasserfälle. Zwei Tage auf der mystischen Insel Chiloé mit ihren einzigartigen Holzkirchen und Pinguin-Kolonien.</p>
+          </div>
+          <div class="route-stop">
+            <span class="route-day">Tage 14-19: Patagonien</span>
+            <h3>Flug nach Punta Arenas / Puerto Natales</h3>
+            <p>Der Höhepunkt im tiefen Süden. Fahrt zum Torres del Paine Nationalpark. Mehrere Tage Zeit für Wanderungen (z.B. Base de las Torres, Glacier Grey) und Bootsausflüge. Die Landschaft ist geprägt von Guanakos, Kondoren und Gletschern.</p>
+          </div>
+          <div class="route-stop">
+            <span class="route-day">Tage 20-21: Rückkehr & Abreise</span>
+            <h3>Flug nach Santiago</h3>
+            <p>Rückflug in die Hauptstadt. Zeit für letzte Souvenireinkäufe auf dem Mercado Central, ein Abschiedsessen mit frischem Lachs oder Ceviche und den Rückflug nach Europa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="copyright">
+        © 2026 Chile Travler. Alle Rechte vorbehalten. Ein unabhängiges Reiseinformationsportal.
+      </div>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
